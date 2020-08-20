@@ -11,10 +11,8 @@ dict_emails = {
 
 def get_mails(dict_emails: dict) -> list:
     emails = list()
-    for key in dict_emails:
-        for value in dict_emails[key]:
-            email = f'{value}@{key}'
-            emails.append(email)
+    new_emails = {k: [f'{i}@{k}' for i in v] for (k , v) in dict_emails.items()}
+    {k: [emails.append(i) for i in v] for k, v in new_emails.items()}
     return emails
 # 1 Implement and run test cases for your function
 
